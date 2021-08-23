@@ -11,7 +11,7 @@ const Page1 = () => {
 
   useEffect(() => {
     dispatch(fetchPage1Data())
-  }, [dispatch, fetchPage1Data])
+  }, [dispatch])
 
   const { title, slider } = useSelector(getPageData()) || {}
   return (

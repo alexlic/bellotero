@@ -1,0 +1,26 @@
+.input {
+  outline: none;
+  border: 1px solid #c5cae9;
+  direction: rtl;
+  border-radius: 4px;
+  font-size: 36px;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.inputContainer {
+  font-family: 'Roboto-Medium';
+}
+
+.inputContainer[variant='money']::before {
+  font-size: 24px;
+  color: #bdbdbd;
+  position: absolute;
+  padding-left: 1rem;
+  padding-top: .5rem;
+  content: '$';
+}
+
+.inputContainer[variant='money'] .input {
+  padding-left: 2rem;
+}

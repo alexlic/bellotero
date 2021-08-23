@@ -1,0 +1,1 @@
+export const getPageDataSelector = state => state?.page2?.data?.calculator

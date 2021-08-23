@@ -11,10 +11,11 @@ module.exports = {
       fontFamily: {
         'roboto-bold': 'Roboto-Bold',
         'roboto-regular': 'Roboto-Regular',
+        'roboto-medium': 'Roboto-Medium',
         'cormorant-semibold-italic': 'CormorantGaramond-SemiBoldItalic'
       },
       fontSize: {
-        '4xl': '2rem'
+        '3xxl': '2rem'
       }
     },
   },

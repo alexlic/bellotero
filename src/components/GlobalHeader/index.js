@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Logo from '@/assets/bellotero.svg'
 import Link from '@/components/Link'
 import DesktopMenu from './DesktopMenu'
+import { getHeaderItemsSelector } from '@/redux/selectors/header'
 
 import { getHeaderItems } from '@/redux/modules/headerItems'
 
@@ -13,9 +14,9 @@ const GlobalHeader = () => {
 
   useEffect(() => {
     dispatch(getHeaderItems())
-  }, [dispatch, getHeaderItems])
+  }, [dispatch])
 
-  const menuItems = useSelector(state => state?.headerItems?.data)
+  const menuItems = useSelector(getHeaderItemsSelector)
 
   return (
     <nav className="mt-2 w-full h-16 bg-white flex items-center px-4">

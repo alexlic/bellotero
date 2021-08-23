@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Navigation from './Navigation'
 
 const Slider = ({ slides }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
   if (!slides || !slides.length) return null
 
   const handleOnClickRigth = () => {
@@ -12,13 +14,11 @@ const Slider = ({ slides }) => {
     if (currentSlide > 0) setCurrentSlide(current => current - 1)
   }
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-
   return (
     <div className="relative w-10/12 bg-white p-10">
       <div className="flex flex-row">
         <div className="w-1/3">
-          <h3 className="text-4xl text-gray-900">{slides[currentSlide].name}</h3>
+          <h3 className="text-3xxl text-gray-900">{slides[currentSlide].name}</h3>
           <p className="text-gray-400 font-roboto-regular">{slides[currentSlide].position}</p>
         </div>
         <div className="w-2/3 text-2xl">
