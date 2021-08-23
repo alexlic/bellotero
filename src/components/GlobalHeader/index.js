@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux';
 
 import Logo from '@/assets/bellotero.svg'
 import Link from '@/components/Link'
 import DesktopMenu from './DesktopMenu'
-import { getHeaderItemsSelector } from '@/redux/selectors/header'
 
+import { getHeaderItemsSelector } from '@/redux/selectors/header'
 import { getHeaderItems } from '@/redux/modules/headerItems'
 
 const GlobalHeader = () => {
