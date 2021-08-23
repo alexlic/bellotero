@@ -3,9 +3,11 @@ import RangeSlider from '@/components/RangeSlider'
 import TextInput from '@/components/TextInput'
 import SavingsResults from './SavingsResults'
 
-const formatNumber = (number) => {
+const formatNumber = (number, limit) => {
   if(!number || isNaN(number)) return null
-  return number.toString().slice(0,6)
+  const shortenNumber = number.toString().slice(0,limit)
+  if (shortenNumber[shortenNumber.length - 1] === '.') return number.toString().slice(0,limit - 1)
+  return shortenNumber
 }
 
 const Calculator = () => {
@@ -16,8 +18,8 @@ const Calculator = () => {
   const [employeesAmount, setEmployeesAmount] = useState(1)
   const foodSavingText = 'Estimated cost food savings'
   const anualSavingText = 'Your estimated annual savings'
-  const foodCostSaving = formatNumber(Number(ingredientSpending) * 0.3)
-  const anualSavings = Number(employeesAmount) * 1337 + foodCostSaving
+  const foodCostSaving = formatNumber(Number(ingredientSpending) * 0.3, 6)
+  const anualSavings = formatNumber(Number(employeesAmount) * 1337 + foodCostSaving, 7)
 
   const handleOnChangeIngredient = e => {
     const regex = /^[0-9]*\.?[0-9]*$/;

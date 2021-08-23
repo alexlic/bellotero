@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Provider } from 'react-redux';
 import { withReduxStore } from '@/redux/store';
 
@@ -9,6 +9,15 @@ import MaxWidth from '@/components/MaxWidth'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps, reduxStore }) {
+
+  useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <>
       <Head>
